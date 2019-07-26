@@ -1,9 +1,18 @@
+Install :
+```
+apt-get install -y python python-pip
+pip install docker-compose
+pip install --upgrade pip
+useradd -m -s /bin/bash XXXXXX
+usermod -a -G docker XXXXXX
+systemctl restart docker
+su - XXXXXX
+```
 First build : 
 
 ```
 docker-compose up --force-recreate --build -d
 ```
-
 ---
 
 other Usefull commands : 
@@ -19,5 +28,6 @@ other Usefull commands :
   docker rmi nomimage
   docker system prune -a -f
 ```
+
 
   
