@@ -27,6 +27,11 @@ other Usefull commands :
   docker image list
   docker rmi nomimage
   docker system prune -a -f
+  
+  Stop all
+  docker stop $(docker ps -a -q)
+  Remove all
+  docker rm $(docker ps -a -q)
 ```
 
 
