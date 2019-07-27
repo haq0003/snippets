@@ -18,3 +18,11 @@ ionice -c 3 nice -n 19 /usr/bin/rsync -avzKh  --super -og --chown=xxx:xxx  -e "s
 ```
 
 ---
+
+Crontab all users :
+
+```
+for user in $(getent passwd | cut -f1 -d: ); do echo $user; crontab -u $user -l; done
+```
+
+---
