@@ -26,3 +26,14 @@ for user in $(getent passwd | cut -f1 -d: ); do echo $user; crontab -u $user -l;
 ```
 
 ---
+
+Set permission :
+
+
+```
+find . -type d -exec chmod 755 {} \;
+
+```
+
+---
+
