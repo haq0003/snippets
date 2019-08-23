@@ -45,9 +45,10 @@ class SqlCalcFoundRows extends SqlWalker
     ```
 ---
 DEBUG :
+```
 var_dump($query->getSql());
 var_dump($query->getParameters());
 var_dump($query->getResult(\PDO::FETCH_ASSOC));
-
+```
 
 
