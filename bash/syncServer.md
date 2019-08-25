@@ -15,6 +15,7 @@ With git-ftp :
 ---
 With lftp 
 For reverse DEST TO SRC add option "mirror -R"
+Other options : --exclude cache/*  --verbose
 
 ```
 lftp 
@@ -22,4 +23,13 @@ lftp
 -u'XXXXXXXXX','XXXXXXXXX' IP.255.255.255
 
 ```
-
+---
+With scp
+```
+scp -r -P port  user@host:remote_path/. .
+```
+---
+With rsync
+```
+rsync -avzKh -e "ssh -p {{PORT}}" --stats --delete-before --exclude 'sites/*/files' --exclude 'sites/*/private' --exclude '*.sql' --exclude 'ftp' /var/www/XXXX {{USER}}@{{HOST}}:/var/www/public/.
+```
