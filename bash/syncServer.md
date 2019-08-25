@@ -1,7 +1,7 @@
 With git-ftp :
-    Edit .git/config
-    RUN git ftp push -s "preprod"
-    WITH on remote :
+- Edit .git/config
+- RUN git ftp push -s "preprod"
+- WITH on remote :
     .git-ftp.log => LAST SHA LOG IN GIT HEAD
     .git-ftp-ignore
 
