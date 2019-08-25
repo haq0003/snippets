@@ -18,8 +18,8 @@ With git-ftp :
 
 ---
 With lftp 
-For reverse DEST TO SRC add option "mirror -R"
-Other options : --exclude cache/*  --verbose
+- For reverse DEST TO SRC add option "mirror -R"
+- Other options : --exclude cache/*  --verbose
 
 ```
 lftp 
