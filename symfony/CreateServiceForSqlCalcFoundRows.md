@@ -42,6 +42,10 @@ class SqlCalcFoundRows extends SqlWalker
     ```
     $query->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, 'App\DoctrineExtension\SqlCalcFoundRows');
     $query->setHint("mysqlWalker.sqlCalcFoundRows", true);
+    
+    $query->execute();
+    $count = $conn->query('SELECT FOUND_ROWS()')->fetch(\PDO::FETCH_COLUMN);
+    
     ```
 ---
 DEBUG :
