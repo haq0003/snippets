@@ -34,6 +34,9 @@ class SqlCalcFoundRows extends SqlWalker
 
     call first
     ```
+    $query = $this->getEntityManager();
+    $conn = $query->getConnection();
+    
     $qb = $query->createQueryBuilder();
     (...)
     $query = $qb->getQuery();
@@ -44,6 +47,7 @@ class SqlCalcFoundRows extends SqlWalker
     $query->setHint("mysqlWalker.sqlCalcFoundRows", true);
     
     $query->execute();
+
     $count = $conn->query('SELECT FOUND_ROWS()')->fetch(\PDO::FETCH_COLUMN);
     
     ```
