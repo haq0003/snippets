@@ -38,7 +38,7 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {
 rm -Rf generated/code/* generated/metadata/*
 
 rm -Rf var/view_preprocessed/*
-rm -rf rm -rf pub/static/frontend/*
+rm -rf pub/static/frontend/*
 
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
