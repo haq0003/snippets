@@ -24,3 +24,32 @@ php bin/magento deploy:mode:set developer
 php -f bin/magento setup:static-content:deploy
 #8
 php -d memory_limit=-1 -d max_execution_time=0 bin/magento cache:clean
+
+
+**************
+php bin/n98-magerun2.phar  config:store:set "dev/front_end_development_workflow/type" server_side_compilation
+php bin/n98-magerun2.phar  config:store:set "dev/front_end_development_workflow/type" client_side_compilation
+
+php bin/magento config:set --scope=default  dev/debug/template_hints_storefront 0
+
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} +
+
+rm -Rf generated/code/* generated/metadata/*
+
+rm -Rf var/view_preprocessed/*
+rm -rf rm -rf pub/static/frontend/*
+
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento cache:clean
+php bin/magento cache:clean config
+php bin/magento cache:clean layout
+php bin/magento cache:clean block_html
+php bin/magento cache:clean full_page
+
+php bin/magento cache:flush
+php bin/magento cache:disable
+
+
+
