@@ -18,6 +18,7 @@ php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl memcached snmp
 RUN a2enmod suexec rewrite ssl actions include cgi
 
 RUN a2enmod dav_fs dav auth_digest
+RUN a2dismod suphp
 
 /********************************************************************/
 
