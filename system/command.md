@@ -12,3 +12,5 @@ Check disk, install smartctl and run test
 ```
 apt-get install smartmontools
 ```
+update-alternatives --config php
+update-alternatives --config php-cgi
