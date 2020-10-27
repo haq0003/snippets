@@ -68,5 +68,32 @@ php-xdebug locales
 
 DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect nginx:alpine
 
+/********************************************************************/
+
+FROM    ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
+RUN apt -y install software-properties-common
+
+RUN add-apt-repository ppa:ondrej/php
+
+RUN apt-get update
+
+RUN apt-get install -y nano vim
+
+RUN export TERM=xterm
+
+RUN apt-get -y --no-install-recommends update && \
+apt-get install -y nano sudo curl openssl libssl-dev git mysql-client  \
+ ssh build-essential wget apache2 \
+libapache2-mod-php php7.4 \
+ca-certificates rsync unzip
+
+RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+
 
 
