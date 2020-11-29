@@ -23,3 +23,8 @@ Résultat:
 
 pdftk --version
 pdftk 2.02 a Handy Tool for Manipulating PDF Documents
+
+
+
+apt-get install imagemagick-common
+
